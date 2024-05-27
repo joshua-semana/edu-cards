@@ -9,7 +9,7 @@ export default function Home() {
             📢 Soon to be&nbsp;<span className="font-bold">Nica L. Deladia, LPT</span>
           </Badge>
           <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            Ma'am Nica's EduCards
+            Ma&apos;am Nica&apos;s EduCards
           </h1>
           <h2 className="md:text-2xl text-muted-foreground">
             Flashcards to Ace the Board Exam. You can do it, <strong>Fighting!</strong>
