@@ -19,8 +19,8 @@ export default function Home() {
             <Card className="max-w-lg lg:max-w-xl text-center">
               <CardContent className="md:text-xl p-4">
                 <p className="md:leading-8 font-bold">
-                  "A good plan violently executed now is better than a perfect plan executed next
-                  week."
+                  &quot;A good plan violently executed now is better than a perfect plan executed
+                  next week.&quot;
                 </p>
               </CardContent>
               <CardFooter className="flex justify-center p-4 pt-0">
