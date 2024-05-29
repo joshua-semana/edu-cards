@@ -7,7 +7,10 @@ const Navbar = () => {
         <a href="/">
           <p className="font-bold text-lg">EduCards</p>
         </a>
-        <Button size={"sm"}>Let&apos;s Go!</Button>
+        <div className="flex items-center gap-2">
+          <Button size={"sm"}>Let&apos;s Go!</Button>
+          {/* <SettingsMenu /> */}
+        </div>
       </div>
     </header>
   );
