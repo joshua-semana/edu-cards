@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import ThemeToggle from "./theme-toggle";
 
 const Navbar = () => {
   return (
@@ -7,9 +7,8 @@ const Navbar = () => {
         <a href="/">
           <p className="font-bold text-lg">EduCards</p>
         </a>
-        <div className="flex items-center gap-2">
-          <Button size={"sm"}>Let&apos;s Go!</Button>
-          {/* <SettingsMenu /> */}
+        <div className="flex items-center">
+          <ThemeToggle />
         </div>
       </div>
     </header>
