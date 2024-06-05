@@ -26,7 +26,7 @@ export default function Home() {
                 <CardTitle>Are you ready?</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm md:text-lg text-muted-foreground mb-3">
+                <p className="md:text-lg text-muted-foreground mb-3">
                   Randomly selected words will flash before you. Gain your personal best today!
                 </p>
                 <DrawerCategories />
