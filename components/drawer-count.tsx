@@ -30,7 +30,7 @@ const DrawerCount: React.FC<Props> = ({ isDisabled }) => {
         <DrawerHeader>
           <DrawerTitle className="text-center">Item Count</DrawerTitle>
           <DrawerDescription className="text-center">
-            Choose how many items you'll take.
+            Choose how many items you&apos;ll take.
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex items-center justify-evenly p-4">
