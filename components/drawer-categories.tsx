@@ -1,6 +1,9 @@
 "use client";
 
+import { api } from "@/convex/_generated/api";
+import { useQuery } from "convex/react";
 import { useState } from "react";
+import DialogAddCategory from "./dialog-add-category";
 import DrawerCount from "./drawer-count";
 import { Button } from "./ui/button";
 import {
@@ -16,11 +19,7 @@ import {
 import { ScrollArea } from "./ui/scroll-area";
 
 const DrawerCategories = () => {
-  const Categories = [
-    { name: "Subject A", description: "Easy" },
-    { name: "Subject B", description: "Medium" },
-    { name: "Subject C", description: "Hard" },
-  ];
+  const categories = useQuery(api.categories.fetch);
 
   const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
 
@@ -32,29 +31,34 @@ const DrawerCategories = () => {
         </Button>
       </DrawerTrigger>
       <DrawerContent className="mx-auto w-full max-w-lg">
-        <DrawerHeader>
-          <DrawerTitle className="text-center">Categories</DrawerTitle>
-          <DrawerDescription className="text-center">Choose a subject below.</DrawerDescription>
+        <DrawerHeader className="flex items-center justify-between">
+          <div>
+            <DrawerTitle>Categories</DrawerTitle>
+            <DrawerDescription>Choose a subject below.</DrawerDescription>
+          </div>
+          <DialogAddCategory></DialogAddCategory>
         </DrawerHeader>
         <ScrollArea>
           <div className="flex flex-col gap-2 max-h-[26rem] px-4">
-            {Categories.map((category, index) => (
-              <Button
-                key={index}
-                variant={selectedCategory === index ? "secondary" : "outline"}
-                className="text-left py-8"
-                onClick={() => setSelectedCategory(index)}>
-                <div className="flex flex-col w-full gap-1">
-                  <p>{category.name}</p>
-                  <p className="text-sm text-muted-foreground">{category.description}</p>
-                </div>
-              </Button>
-            ))}
+            {categories?.map((category, index) => {
+              return (
+                <Button
+                  key={category._id}
+                  variant={selectedCategory === index ? "secondary" : "outline"}
+                  className="text-left py-8"
+                  onClick={() => setSelectedCategory(index)}>
+                  <div className="flex flex-col w-full gap-1">
+                    <p>{category.name}</p>
+                    <p className="text-sm text-muted-foreground">{category.description}</p>
+                  </div>
+                </Button>
+              );
+            })}
           </div>
         </ScrollArea>
         <DrawerFooter className="flex-row">
           <DrawerClose asChild className="flex-1">
-            <Button variant="outline" onClick={() => setSelectedCategory(null)}>
+            <Button variant={"outline"} onClick={() => setSelectedCategory(null)}>
               Cancel
             </Button>
           </DrawerClose>
